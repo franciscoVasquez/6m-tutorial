@@ -1,1 +1,5 @@
 -e "node_modules/\n dist /\n.cache/" 
+
+.cache/
+dist/
+node_modules/

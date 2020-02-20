@@ -32,7 +32,20 @@ export class Tui6mTutorialComponent extends HTMLElement {
     static get observedAttributes() {
         return ['level', 'scope']
     }
-    
+
+    loadRandomNumber() {
+        const xhr = new XMLHttpRequest(),
+            shadow = this.shadow; // must be reassigned due to closure scope
+
+        xhr.addEventListener("load", function () {
+            shadow.innerHTML += ` ${JSON.parse(this.response).value}`;
+        });
+
+        xhr.addEventListener("error", error => console.error(error));
+
+        xhr.open("GET", middlelayerUrl);
+        xhr.send();
+    }
 
     connectedCallback() {
         this.shadow.innerHTML = `
@@ -60,3 +73,12 @@ export class Tui6mTutorialComponent extends HTMLElement {
 }
 
 customElements.define('tui-6m-tutorial-component', Tui6mTutorialComponent)
+
+let assetsUrl = "__TUI_6M_ASSETS_URL__",
+    middlelayerUrl = "__TUI_6M_MIDDLELAYER_URL__";
+
+// development fallback
+if (assetsUrl.indexOf("__") === 0) {
+    assetsUrl = "http://localhost:3000";
+    middlelayerUrl = "http://localhost:3500";
+}

@@ -69,11 +69,9 @@ export class Tui6mTutorialComponent extends HTMLElement {
           </style>
           <div>Hello World</div>
       `
+        this.loadRandomNumber()
     }
 }
-
-customElements.define('tui-6m-tutorial-component', Tui6mTutorialComponent)
-
 let assetsUrl = "__TUI_6M_ASSETS_URL__",
     middlelayerUrl = "__TUI_6M_MIDDLELAYER_URL__";
 
@@ -82,3 +80,6 @@ if (assetsUrl.indexOf("__") === 0) {
     assetsUrl = "http://localhost:3000";
     middlelayerUrl = "http://localhost:3500";
 }
+
+customElements.define('tui-6m-tutorial-component', Tui6mTutorialComponent)
+

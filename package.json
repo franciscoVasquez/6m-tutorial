@@ -1,0 +1,23 @@
+{
+  "name": "6m-tutorial",
+  "version": "1.0.0",
+  "description": "\"this is my first 6M component\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franciscoVasquez/6m-tutorial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franciscoVasquez/6m-tutorial/issues"
+  },
+  "homepage": "https://github.com/franciscoVasquez/6m-tutorial#readme",
+  "dependencies": {
+    "@tuicom/6m-env": "^5.4.0"
+  }
+}

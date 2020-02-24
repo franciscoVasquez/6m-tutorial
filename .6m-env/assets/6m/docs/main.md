@@ -1,0 +1,1 @@
+"This 6M component prints **Hello World** in different languages. It is able to display states as different border colors and emits Cotton Ball events when clicked."

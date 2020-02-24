@@ -1,3 +1,4 @@
 "node_modules/" 
 /middlelayer/node_modules
 /node_modules
+/.vs

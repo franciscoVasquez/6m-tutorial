@@ -1,10 +1,13 @@
+import L10n from "@tuicom/l10n/l10n"
+import translations from "./l10n/translations.json"
+
 export class Tui6mTutorialComponent extends HTMLElement {
 
    
     constructor() {
         super()
         this.shadow = this.attachShadow({ mode: 'open' })
-
+       
         this.addEventListener("click", ev => {
             let rect = ev.target.getBoundingClientRect()
 
@@ -30,7 +33,7 @@ export class Tui6mTutorialComponent extends HTMLElement {
 
 
     static get observedAttributes() {
-        return ['level', 'scope']
+        return ['level', 'scope','locale']
     }
 
     loadRandomNumber() {
@@ -48,6 +51,7 @@ export class Tui6mTutorialComponent extends HTMLElement {
     }
 
     connectedCallback() {
+        const l10n = new L10n(translations, this.getAttribute("locale"))
         this.shadow.innerHTML = `
           <style>
             :host([level="warning"]) {
@@ -67,7 +71,7 @@ export class Tui6mTutorialComponent extends HTMLElement {
             }
 
           </style>
-          <div>Hello World</div>
+        <div>${l10n.t("Hello World", this.getAttribute("locale"))}</div>
       `
         this.loadRandomNumber()
     }

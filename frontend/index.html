@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <title>Web Component Demo</title>
     <script src="https://api.tui.com/ml/cotton-ball/"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.tui.com/ml/common-style-provider/css/main.min.css">
+
 </head>
 <body>
     <script src="/main.js" async defer></script>
-    <tui-6m-tutorial-component level="warning" locale="fr-FR"></tui-6m-tutorial-component>
+    <tui-6m-tutorial-component level="warning" locale="fr-FR"></tui-6m-tutorial-component> 
 </body>
 </html>
 <script>
@@ -18,8 +20,6 @@
         (componentName, scope, eventName, data) =>
             console.log(componentName, scope, eventName, data)
     )
-
-    
 
     setTimeout(() => {
         tuiCottonBall.publish(

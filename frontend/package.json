@@ -27,7 +27,7 @@
   "devDependencies": {
     "@tuicom/6m-env": "^5.4.0",
     "@tuicom/l10n-tools": "^5.0.0",
-    "parcel": "^1.12.4"
+    "parcel": "^2.8.2"
   },
   "dependencies": {
     "@tuicom/l10n": "^5.0.2"
